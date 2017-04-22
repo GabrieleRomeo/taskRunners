@@ -1,0 +1,94 @@
+$c-name: 'wow';
+
+$c-animicon: 'animicon';
+
+%reset-sizes {
+  padding: 0;
+  margin: 0;
+}
+
+%list-none {
+  list-style-type: none;
+}
+
+
+
+@include c($c-name) {
+
+  $c-wow-side: getBEMReference($c-name, 'side');
+
+  @include e('video') {
+    position: relative;
+  }
+
+
+  @include l('control') {
+    width: 100%;
+  }
+
+  .l-list {
+    @extend %reset-sizes;
+    @extend %list-none;
+  }
+}
+
+@include c($c-animicon) {
+
+  $c-anim-side: getBEMReference($c-animicon, 'side');
+
+  @include e('sides') {
+    @extend %reset-sizes;
+    @extend %list-none;
+    position: relative;
+    width: 36px;
+    height: 35px;
+  }
+
+  @include e('side') {
+
+    @include dry() {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+    }
+
+    @include m('1') {
+      @extend %#{$c-anim-side};
+      top: 2px;
+      left: 0;
+      background-color: red;
+      transform-origin: right;
+      transform: rotate(-45deg);
+    }
+
+    @include m('2') {
+      @extend %#{$c-anim-side};
+      top: 2px;
+      right: 0;
+      background-color: black;
+      transform-origin: left;
+      transform: rotate(45deg);
+    }
+
+    @include m('3') {
+      @extend %#{$c-anim-side};
+      bottom: 0;
+      left: 0;
+      background-color: green;
+      transform-origin: right;
+      transform: rotate(45deg);
+    }
+
+    @include m('4') {
+      @extend %#{$c-anim-side};
+      bottom: 0;
+      right: 0;
+      background-color: blue;
+      transform-origin: left;
+      transform: rotate(-45deg);
+    }
+
+  }
+
+
+}
