@@ -220,6 +220,7 @@ gulp.task('_checkout-master', function(callback) {
 
         if (err) { throw err; }
 
+        callback();
     });
 });
 
@@ -229,6 +230,7 @@ gulp.task('_checkout-develop', function(callback) {
 
         if (err) { throw err; }
 
+        callback();
     });
 });
 
@@ -242,7 +244,7 @@ gulp.task('_release-merge', function(callback) {
 
         if (err) { throw err; }
 
-        return Promise.resolve();
+        callback();
     });
 });
 
