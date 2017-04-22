@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+///
+/// Represent the framework's name and the prefix of each component
+/// @access private
+/// @type String
+$g-framework-name: 'evo' !default;
+
+///
+/// Helper variable that can be used within the provided naming mixins
+/// @access private
+/// @type Boolean
+$g-no-prefix: false;
